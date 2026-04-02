@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Litology Data - Home</title>
+    <link rel="icon" type="image/png" href="Geoaccess.png">
+    <link rel="shortcut icon" type="image/png" href="Geoaccess_White2.png">  
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/index.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-geo-dark flex flex-col min-h-screen relative overflow-x-hidden">
+
+    <!-- Navigation Header -->
+    <header class="w-full bg-white py-6 px-6 md:px-12 lg:px-24 flex justify-between items-center z-20 relative">
+        <div class="flex items-center">
+            <!-- Logo Placeholder -->
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="Geoaccess.png" alt="GeoAccess" class="h-8 md:h-10 w-auto object-contain">
+            </a>
+        </div>
+        <!--Menu Toggle-->
+        <div class="md:hidden relative">
+            <button id="menu-btn" class="text-[#15322F] cursor-pointer p-2 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+
+            <div id="mobile-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 z-50 overflow-hidden">
+                <div class="flex flex-col py-2">
+                    <a href="index.html" class="px-4 py-3 text-sm text-[#15322F] hover:bg-gray-50 border-b border-gray-50 font-semibold">Home</a>
+                    <a href="https://www.geoaccess.id/" class="px-4 py-3 text-sm text-[#15322F] hover:bg-gray-50 border-b border-gray-50 font-semibold">Contact</a>
+                    <a href="map.html" class="px-4 py-3 text-sm text-green-700 hover:bg-gray-50 font-bold">Go To WebMap</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block">
+            <ul class="flex space-x-8 text-[#15322F] font-medium text-sm tracking-wide">
+                <li><a href="index.html" class="hover:text-green-700 transition-colors">Home</a></li>
+                <li><a href="https://www.geoaccess.id/" class="hover:text-green-700 transition-colors">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Hero Section -->
+    <main class="flex-grow flex items-center w-full px-6 md:px-12 lg:px-24 py-12 relative overflow-hidden bg-[#153937]">
+    
+    <div class="relative z-20 max-w-[85%] md:max-w-2xl lg:max-w-4xl">
+        <h1 class="text-white text-3xl md:text-6xl font-bold leading-[1.1] mb-2 drop-shadow-lg md:whitespace-nowrap">
+            Access The <br class="md:hidden"> Lithology
+        </h1>
+
+        <h2 class="text-[#D9E15B] text-xl md:text-5xl font-light leading-tight mb-8 md:mb-10 drop-shadow-md">
+            Laboratory Data
+        </h2>
+        
+        <a href="map.html" class="inline-block bg-white text-[#153937] font-bold py-3 md:py-4 px-8 md:px-20 rounded-xl md:rounded-2xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl text-sm md:text-base">
+            Go To WebMap
+        </a>
+    </div>
+
+    <div class="absolute -right-[77%] md:-right-[-1%] top-[40%] -translate-y-1/2 h-full md:h-[145%] z-10 pointer-events-none">
+        <img src="mineral.png" alt="Decorative Bamboo" 
+             class="h-full w-auto object-cover opacity-90 md:opacity-100">
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-[#153937] via-[#153937]/60 to-transparent z-15 md:hidden pointer-events-none"></div>
+
+</main>
+
+    <!-- Footer -->
+    <footer class="w-full px-6 md:px-12 lg:px-24 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 z-10">
+        <div class="mb-4 md:mb-0">
+            &copy; 2026 Geoaccess.
+        </div>
+        
+        <div class="flex space-x-6 items-center">
+            <a href="https://www.instagram.com/geoaccess/" class="hover:opacity-100 opacity-70 transition-opacity">
+                <!-- Inline SVG for Instagram -->
+                <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/geoaccessindonesia/" class="hover:opacity-100 opacity-70 transition-opacity">
+                <!-- Inline SVG for LinkedIn -->
+                <svg class="w-5 h-5 fill-current text-white" style="position: relative; top: -1px;" viewBox="0 0 24 24">
+                    <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Toggle menu when clicking the button
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevents immediate closing
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking anywhere else
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && e.target !== menuBtn) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+</script>
+</body>
+</html>

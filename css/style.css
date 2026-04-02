@@ -1,0 +1,304 @@
+/* 
+   Global Stylesheet 
+   Imports Inter font and sets up custom properties for consistency.
+*/
+
+
+:root {
+    /* Color Palette extracted from Figma Designs */
+    --geo-dark-green: #153937;   /* The main background color */
+    --geo-accent-green: #D6E466; /* The 'Ground Check Data' text color */
+    --geo-white: #FFFFFF;        /* Header and Text */
+    --geo-footer-text: #9CA3AF;  /* Footer muted text */
+    --geo-button-text: #153937;  /* Button text color */
+}
+
+/* 
+   Base Resets & Font Setup 
+   Tailwind handles most normalization, but we enforce the font here.
+*/
+body {
+    font-family: 'Manrope';
+    background-color: var(--geo-dark-green);
+    color: var(--geo-white);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Sticky footer setup */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 
+   Utility Classes for Custom Colors 
+   To be used alongside Tailwind classes
+*/
+
+.bg-geo-dark {
+    background-color: var(--geo-dark-green);
+}
+
+.text-geo-accent {
+    color: var(--geo-accent-green);
+}
+
+/* 
+   Header Styling 
+*/
+header {
+    background-color: var(--geo-white);
+    /* Ensures the header stays white while the rest is dark */
+}
+
+/* 
+   Map Container Styling (for map.html)
+   Leaflet/Map libraries require a defined height to render.
+*/
+#map-container {
+    width: 100%;
+    /* Calculates height: 100vh - (Header Height + Footer Height + Padding) 
+       Adjust 140px based on actual header/footer size */
+    height: calc(100vh - 140px); 
+    background-color: #e5e7eb; /* Placeholder gray while map loads */
+    z-index: 1;
+}
+
+/* 
+   Leaflet/Map specific z-index fixes to ensure navbar sits on top 
+*/
+.leaflet-container {
+    z-index: 1;
+}
+
+/* 
+   Main Content Layout (Landing Page)
+   Flex grow ensures the footer is pushed to the bottom.
+*/
+main {
+    flex-grow: 1;
+    position: relative;
+    overflow-x: hidden; /* Prevents scrollbar if bamboo image overflows */
+}
+
+/* 
+   Bamboo Illustration Positioning 
+   Handles the artistic image on the right side of the landing page.
+*/
+.bamboo-bg {
+    position: absolute;
+    right: 3%;
+    top: 43%;
+    transform: translateY(-50%);
+    height: 112%; /* Adjust based on image aspect ratio */
+    width: auto;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.9;
+    pointer-events: none; /* Allows clicking through the image if needed */
+}
+.legend {
+    width: 180px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px); 
+    padding: 12px;
+    line-height: 24px;
+    color: #1e293b;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    font-family: 'Manrope';
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.legend h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.legend i {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1.5px solid #ffffff; /* White ring around the color dot */
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1); /* Subtle outline */
+}
+.leaflet-popup-content {
+    font-family: 'Manrope';
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 12px; /* Smoother, Mac-like rounded corners */
+    padding: 3px;
+}
+
+.popup-img { 
+    width: 100%; 
+    max-width: 200px; 
+    border-radius: 12px; /* Rounded corners for the image too */
+    margin-top: 4px; 
+}
+
+.leaflet-popup.geo-popup-shell .leaflet-popup-content-wrapper {
+    padding: 0;
+    border-radius: 18px;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.leaflet-popup.geo-popup-shell .leaflet-popup-content {
+    margin: 0;
+    width: 250px !important;
+}
+
+.leaflet-popup.geo-popup-shell .leaflet-popup-tip {
+    width: 14px;
+    height: 14px;
+    margin-top: -6px;
+    background: rgba(21, 57, 55, 0.92);
+    box-shadow: 0 3px 8px rgba(2, 8, 23, 0.2);
+}
+
+.leaflet-popup.geo-popup-shell .leaflet-popup-tip-container {
+    width: 20px;
+    height: 10px;
+}
+
+.geo-popup-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(15, 36, 34, 0.5);
+    box-shadow: 0 10px 22px rgba(2, 8, 23, 0.24);
+    background: #112d2a;
+}
+
+.geo-popup-image-wrap {
+    height: 138px;
+    background: #1f2937;
+}
+
+.geo-popup-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.geo-popup-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e2e8f0;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: linear-gradient(135deg, #334155, #475569);
+}
+
+.geo-popup-panel {
+    padding: 10px 12px;
+    color: #f8fafc;
+    background: linear-gradient(180deg, rgba(26, 76, 70, 0.94), rgba(17, 49, 45, 0.96));
+    position: relative;
+    padding-right: 58px;
+    min-height: 56px;
+}
+
+.geo-popup-title {
+    margin: 0 0 4px;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.geo-popup-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: rgba(239, 250, 248, 0.95);
+}
+
+.geo-popup-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #ffffff;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+}
+
+.geo-popup-logo {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 68px;
+    height: auto;
+    opacity: 0.92;
+    pointer-events: none;
+}
+.leaflet-control-layers {
+    width: 180px;
+    background: rgba(255, 255, 255, 0.8) !important; /* Match your legend background */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    padding: 8px 12px !important;
+    color: #1e293b !important;
+    border-radius: 12px !important; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+    font-family: 'Manrope' !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Style the text and checkboxes inside the control */
+.leaflet-control-layers-overlays label {
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Optional: Make the checkbox slightly more modern */
+.leaflet-control-layers-selector {
+    margin-right: 6px !important;
+    cursor: pointer;
+}
+
+/* Mobile responsiveness for the bamboo image */
+@media (max-width: 768px) {
+    .bamboo-bg {
+        position: relative;
+        top: 0;
+        transform: none;
+        height: auto;
+        width: 100%;
+        max-width: 400px;
+        margin-top: 2rem;
+        opacity: 0.4; /* Fade it out on mobile so text is readable */
+    }
+}
